@@ -1,71 +1,243 @@
 # -*- coding: utf-8 -*-
-"""Bounded, source-traceable static detailing of the existing Airhorse assembly."""
+"""Product-independent declarative geometry contract. Python 2.7 and 3."""
+from __future__ import division
+import re
 from core.active_plan import finite
 from core.parameter_policy import source_status
 
+try:
+    TEXT = (basestring,)
+except NameError:
+    TEXT = (str,)
+
+
+def check(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def number(value, low=-100000, high=100000):
+    check(finite(value) and low <= value <= high, "Invalid finite number: " + str(value))
+    return value
+
+
+def vector(value, count=3):
+    check(isinstance(value, list) and len(value) == count, "Expected coordinate vector")
+    return [number(x) for x in value]
+
+
+def keys(value, allowed, required=()):
+    check(isinstance(value, dict), "Expected object")
+    check(not set(value).difference(allowed), "Unsupported fields: " + str(sorted(set(value).difference(allowed))))
+    check(not set(required).difference(value), "Missing fields: " + str(sorted(set(required).difference(value))))
+
+
+def frame(value):
+    keys(value, ("origin_mm", "u", "v"), ("origin_mm", "u", "v"))
+    vector(value["origin_mm"])
+    u, v = vector(value["u"]), vector(value["v"])
+    check(abs(sum(x*x for x in u) - 1) < 1e-6 and abs(sum(x*x for x in v) - 1) < 1e-6, "Frame u and v must be unit vectors")
+    check(abs(sum(x*y for x, y in zip(u, v))) < 1e-6, "Frame u and v must be perpendicular")
+
+
+def profile(value):
+    check(isinstance(value, dict), "Expected profile object")
+    kind = value.get("kind")
+    if kind in ("circle", "ellipse", "rectangle", "rounded_rectangle"):
+        fields = {"circle": ("radius_mm",), "ellipse": ("rx_mm", "ry_mm"),
+                  "rectangle": ("width_mm", "height_mm"),
+                  "rounded_rectangle": ("width_mm", "height_mm", "radius_mm")}[kind]
+        keys(value, ("kind", "offset_mm") + fields, ("kind",) + fields)
+        for name in fields:
+            number(value[name], .5)
+        vector(value.get("offset_mm", [0, 0]), 2)
+        if kind == "rounded_rectangle":
+            check(2*value["radius_mm"] < min(value["width_mm"], value["height_mm"]), "Corner diameter must be smaller than both rectangle sides")
+    elif kind == "polygon":
+        keys(value, ("kind", "points_mm"), ("points_mm",))
+        points = value["points_mm"]
+        check(isinstance(points, list) and 3 <= len(points) <= 256, "Expected 3..256 polygon vertices")
+        for p in points:
+            vector(p, 2)
+        for a, b in zip(points, points[1:] + points[:1]):
+            check(sum((x-y)**2 for x, y in zip(a, b)) >= .25, "Profile edge shorter than 0.5 mm")
+        area = sum(a[0]*b[1]-a[1]*b[0] for a, b in zip(points, points[1:]+points[:1]))
+        check(abs(area) > .5, "Degenerate polygon")
+    elif kind == "curves":
+        keys(value, ("kind", "segments"), ("segments",))
+        segments = value["segments"]
+        check(isinstance(segments, list) and 2 <= len(segments) <= 256, "Expected 2..256 line/arc segments")
+        for segment in segments:
+            check(isinstance(segment, dict), "Expected segment object")
+            check(segment.get("kind") in ("line", "arc"), "Only line and three-point arc segments are supported")
+            fields = ("kind", "start_mm", "end_mm") + (("mid_mm",) if segment["kind"] == "arc" else ())
+            keys(segment, fields, fields)
+            a, b = vector(segment["start_mm"], 2), vector(segment["end_mm"], 2)
+            check(sum((x-y)**2 for x, y in zip(a, b)) >= .25, "Segment shorter than 0.5 mm")
+            if segment["kind"] == "arc":
+                m = vector(segment["mid_mm"], 2)
+                check(abs((b[0]-a[0])*(m[1]-a[1])-(b[1]-a[1])*(m[0]-a[0])) > 1e-6, "Arc points must not be collinear")
+        for a, b in zip(segments, segments[1:]+segments[:1]):
+            check(all(abs(x-y) < 1e-6 for x, y in zip(a["end_mm"], b["start_mm"])), "Profile is not closed")
+    else:
+        raise ValueError("Unsupported profile: " + str(kind))
+
+
+def geometry(value, budget, level=0):
+    check(isinstance(value, dict), "Expected geometry object")
+    budget[0] += 1
+    check(level <= 6 and budget[0] <= 1000, "Geometry complexity limit exceeded")
+    kind = value.get("kind")
+    if kind == "boolean":
+        keys(value, ("kind", "operation", "left", "right"), ("operation", "left", "right"))
+        check(value["operation"] in ("union", "difference", "intersection"), "Unsupported boolean operation")
+        geometry(value["left"], budget, level+1)
+        geometry(value["right"], budget, level+1)
+        return
+    check(kind in ("extrusion", "revolve", "loft"), "Unsupported geometry: " + str(kind))
+    fields = {"extrusion": ("loops", "depth_mm"), "revolve": ("profile", "angle_deg"), "loft": ("sections",)}[kind]
+    keys(value, ("kind", "frame") + fields, ("kind", "frame") + fields)
+    frame(value["frame"])
+    if kind == "extrusion":
+        number(value["depth_mm"], .5)
+        check(isinstance(value["loops"], list) and 1 <= len(value["loops"]) <= 100, "Expected 1..100 profile loops")
+        for loop in value["loops"]:
+            profile(loop)
+    elif kind == "revolve":
+        number(value["angle_deg"], .1, 360)
+        profile(value["profile"])
+    else:
+        sections = value["sections"]
+        check(isinstance(sections, list) and 2 <= len(sections) <= 32, "Expected 2..32 loft sections")
+        last = None
+        for section in sections:
+            keys(section, ("offset_mm", "profile"), ("offset_mm", "profile"))
+            number(section["offset_mm"])
+            check(last is None or section["offset_mm"] - last >= .5, "Loft sections must increase by at least 0.5 mm")
+            profile(section["profile"])
+            last = section["offset_mm"]
+
+
+def bounds(value):
+    keys(value, ("min_mm", "max_mm"), ("min_mm", "max_mm"))
+    lo, hi = vector(value["min_mm"]), vector(value["max_mm"])
+    check(all(b > a for a, b in zip(lo, hi)), "Expected nonzero bounding box")
+
+
+def compare_bounds(actual, expected, tolerance):
+    """Measure all six bounds, not merely overall size or containment."""
+    deltas = {key: [a-e for a, e in zip(actual[key], expected[key])] for key in ("min_mm", "max_mm")}
+    return {"success": all(abs(x) <= tolerance for values in deltas.values() for x in values),
+            "actual": actual, "expected": expected, "delta_mm": deltas, "tolerance_mm": tolerance}
+
 
 def detail_plan(before, spec, generated):
-    errors = []
+    errors, warnings, items, replacement, requirements = [], [], [], [], []
+    def attempt(label, action):
+        try:
+            action()
+        except (ValueError, TypeError, KeyError, OverflowError) as error:
+            errors.append(label + ": " + str(error))
     if before.get("ready") is False or before.get("is_read_only"):
         errors.append("Family preflight is not ready")
-    items = spec.get("details", [])
-    if not isinstance(items, list) or not 1 <= len(items) <= 250:
-        errors.append("Expected 1..250 explicit detail primitives")
-        items = []
-    ids = [item.get("logical_id") for item in items]
-    if any(not name or not name.startswith("airhorse/BPM-40A/detail/") for name in ids) or len(ids) != len(set(ids)):
-        errors.append("Unique Airhorse detail IDs required")
-    if set(ids).intersection(item["logical_id"] for item in generated):
-        errors.append("Details already exist; automatic replacement is disabled")
-    required = {"airhorse/BPM-40A/receiver_left", "airhorse/BPM-40A/receiver_right"}
-    receivers = [g for g in generated if g["logical_id"] in required]
-    if set(g["logical_id"] for g in receivers) != required:
-        errors.append("Expected two original FamilyMCP Airhorse receivers")
-    parameters = {p["name"]: p for p in before["parameters"]}
-    for name, expected in {"L": 2250, "B": 1200, "H": 1740, "d1": 460, "l3": 1950}.items():
-        p = parameters.get(name)
-        if (not p or p["is_shared"] or p["is_instance"] or p["parameter_type"] != "Length"
-                or p.get("formula") or any(v is None or abs(v * 304.8 - expected) > 0.001 for v in p["values_by_type_internal"].values())):
-            errors.append("Unexpected baseline parameter: " + name)
-    refinement = spec.get("receiver_refinement", {})
-    if (refinement.get("parameter") != "l3" or refinement.get("straight_length_mm") != 1820
-            or refinement.get("cap_depth_mm") != 65 or refinement.get("overall_length_mm") != 1950
-            or source_status(refinement.get("source", {})) != "CONFIRMED"):
-        errors.append("Explicit 1820 + 2*65 = 1950 mm receiver refinement required")
-    for item in items:
-        if source_status(item.get("source", {})) != "CONFIRMED" or item.get("approximate") is not True:
-            errors.append("Every static detail needs source and approximate=true")
-        kind = item.get("kind")
-        if kind not in ("box", "panel", "cylinder", "dome"):
-            errors.append("Unsupported detail primitive")
-            continue
-        center = item.get("center_mm", [])
-        if len(center) != 3 or not all(finite(v) and abs(v) <= 3000 for v in center):
-            errors.append("Invalid detail center")
-        sizes = item.get("size_mm", []) if kind == "box" else ([item.get("width_mm"), item.get("height_mm"), item.get("depth_mm")] if kind == "panel" else [item.get("radius_mm"), item.get("depth_mm")])
-        if not sizes or not all(finite(v) and 0.8 <= v <= 2500 for v in sizes):
-            errors.append("Invalid detail dimensions")
-        if kind != "box" and item.get("axis") not in ("X", "-X", "Y", "-Y", "Z", "-Z"):
-            errors.append("Unsupported detail axis")
-        if item.get("material") not in ("dark", "medium", "light"):
-            errors.append("Expected neutral detail material")
-        if item.get("grid"):
-            columns, rows = item["grid"]
-            if not all(type(v) is int and 1 <= v <= 20 for v in (columns, rows)):
-                errors.append("Invalid perforation grid")
-            if not finite(item.get("border_mm")) or not finite(item.get("web_mm")):
-                errors.append("Explicit grille border and web required")
-            elif any((length - 2 * item["border_mm"]) / count - item["web_mm"] < 2
-                     for length, count in ((item["width_mm"], columns), (item["height_mm"], rows))):
-                errors.append("Grille openings are too small")
-        if kind == "dome" and (item["depth_mm"] != 65 or item["radius_mm"] != 230):
-            errors.append("Unexpected receiver dome size")
-    cap_centers = {tuple(item["center_mm"]): item.get("axis") for item in items if item.get("kind") == "dome"}
-    expected_caps = {(x, y, 360): ("X" if x > 0 else "-X") for x in (-910, 910) for y in (-300, 300)}
-    if cap_centers != expected_caps or sum(item.get("kind") == "dome" for item in items) != 4:
-        errors.append("Four correctly positioned domes are required for receiver refinement")
-    return {"success": True, "ready": not errors, "errors": errors,
-            "warnings": ["Details are static, unbound and approximate; update them separately if base dimensions change."],
-            "details": items, "receiver_refinement": refinement, "receivers_to_refine": receivers,
-            "detail_count": len(items), "context_token": before["context_token"],
-            "source_documents": spec.get("source_documents", []), "parameter_count_before": before["parameter_count"]}
+    try:
+        keys(spec, ("schema_version", "details", "source_documents", "replace_generated_ids", "expected_bounds_mm",
+                    "tolerance_mm", "requirements", "accept_scaled_dimensions", "accept_assumptions"),
+             ("schema_version", "details", "expected_bounds_mm", "tolerance_mm", "requirements"))
+        check(type(spec["schema_version"]) is int and spec["schema_version"] == 1, "Expected universal detail schema_version=1; legacy product profiles are not supported")
+        check(isinstance(spec["details"], list) and 1 <= len(spec["details"]) <= 250, "Expected 1..250 details")
+        items = spec["details"]
+        for field in ("accept_scaled_dimensions", "accept_assumptions"):
+            check(type(spec.get(field, False)) is bool, field + " must be boolean")
+    except (ValueError, TypeError, KeyError) as error:
+        errors.append(str(error))
+        spec, items = {}, []
+    attempt("expected_bounds_mm", lambda: bounds(spec.get("expected_bounds_mm")))
+    attempt("tolerance_mm", lambda: number(spec.get("tolerance_mm"), .01, 100))
+    budget, ids = [0], []
+    for index, item in enumerate(items):
+        def validate_item():
+            keys(item, ("logical_id", "geometry", "source", "accuracy", "material_rgb", "fine_only", "expected_bounds_mm"),
+                 ("logical_id", "geometry", "source", "accuracy"))
+            name = item["logical_id"]
+            check(isinstance(name, TEXT) and re.match(r"^[A-Za-z0-9][A-Za-z0-9_./-]{0,119}$", name), "Invalid logical_id")
+            check(not name.endswith("/plane") and not name.startswith("presentation/"), "Reserved logical_id")
+            check(name not in ids, "Duplicate logical_id")
+            ids.append(name)
+            check(source_status(item["source"]) == "CONFIRMED", "Detail source is not confirmed")
+            source = item["source"]
+            check(source.get("file") or source.get("reference"), "Detail source reference is required")
+            accuracy = item["accuracy"]
+            check(accuracy in ("dimensioned", "scaled", "assumed"), "Invalid accuracy")
+            if accuracy == "scaled":
+                check(spec.get("accept_scaled_dimensions") is True, "Scaled dimensions require explicit acceptance")
+                check(source.get("source_type") == "derived", "Scaled geometry requires a derived source")
+                calibration = source.get("calibration", {})
+                check(isinstance(calibration, dict), "Expected scale calibration object")
+                for key in ("known_mm", "known_drawing_units", "measured_drawing_units", "result_mm", "uncertainty_mm"):
+                    number(calibration.get(key), .000001)
+                calculated = calibration["known_mm"] * calibration["measured_drawing_units"] / calibration["known_drawing_units"]
+                check(abs(calculated-calibration["result_mm"]) <= .001, "Scale calibration arithmetic mismatch")
+                check(source.get("view") and source.get("page"), "Scaled source requires page and orthographic view")
+                warnings.append(name + ": scaled dimensions; uncertainty is not a manufacturing tolerance")
+            if accuracy == "assumed":
+                check(spec.get("accept_assumptions") is True, "Assumed geometry requires explicit acceptance")
+                check(source.get("reason"), "Assumption reason is required")
+                warnings.append(name + ": assumed geometry, not verified against drawing")
+            if accuracy == "dimensioned":
+                check(source.get("source_type") in ("direct", "user_input", "integration_test"), "Dimensioned geometry requires direct dimensions")
+            rgb = item.get("material_rgb", [180, 180, 180])
+            check(isinstance(rgb, list) and len(rgb) == 3 and all(type(x) is int and 0 <= x <= 255 for x in rgb), "Invalid material_rgb")
+            check(type(item.get("fine_only", False)) is bool, "fine_only must be boolean")
+            if "expected_bounds_mm" in item:
+                bounds(item["expected_bounds_mm"])
+            geometry(item["geometry"], budget)
+        attempt("detail " + str(index), validate_item)
+    requested = spec.get("replace_generated_ids", [])
+    def replacements():
+        check(isinstance(requested, list) and all(isinstance(n, TEXT) for n in requested), "Expected replacement ID list")
+        check(len(requested) == len(set(requested)), "Duplicate replacement ID")
+        original_ids = set(e["unique_id"] for e in before.get("existing_geometry", {}).get("elements", []))
+        for name in requested:
+            matches = [g for g in generated if g.get("logical_id") == name and g.get("unique_id") in original_ids]
+            check(len(matches) == 1, "Replacement requires one existing tagged form: " + name)
+            replacement.extend(matches)
+        conflicts = set(ids).intersection(g.get("logical_id") for g in generated).difference(requested)
+        check(not conflicts, "Details already exist; explicitly select replacement IDs: " + str(sorted(conflicts)))
+    attempt("replacement", replacements)
+    def coverage():
+        rows = spec.get("requirements")
+        check(isinstance(rows, list) and 1 <= len(rows) <= 250, "Expected explicit requirements coverage")
+        seen, covered = set(), set()
+        for row in rows:
+            keys(row, ("id", "description", "detail_ids"), ("id", "description", "detail_ids"))
+            check(isinstance(row["id"], TEXT) and row["id"] and row["id"] not in seen, "Unique requirement ID required")
+            check(isinstance(row["description"], TEXT) and row["description"].strip(), "Requirement description required")
+            check(isinstance(row["detail_ids"], list) and row["detail_ids"] and all(isinstance(n, TEXT) for n in row["detail_ids"]), "Every requirement must reference modeled details")
+            check(set(row["detail_ids"]).issubset(ids), "Requirement refers to a missing detail")
+            seen.add(row["id"])
+            covered.update(row["detail_ids"])
+            requirements.append(row)
+        check(covered == set(ids), "Every detail must be mapped to a requirement")
+    attempt("requirements", coverage)
+    documents = spec.get("source_documents", [])
+    def sources():
+        check(isinstance(documents, list) and len(documents) <= 50, "Invalid source_documents")
+        for source in documents:
+            keys(source, ("file", "sha256"), ("file", "sha256"))
+            check(isinstance(source["file"], TEXT) and source["file"], "Source file required")
+            check(isinstance(source["sha256"], TEXT) and re.match(r"^[0-9a-f]{64}$", source["sha256"]), "Invalid source SHA256")
+        declared = set(source["file"] for source in documents)
+        for item in items:
+            source = item.get("source", {}) if isinstance(item, dict) else {}
+            if isinstance(source, dict) and source.get("file"):
+                check(source["file"] in declared, "Every local source file requires a source_documents SHA256")
+    attempt("source_documents", sources)
+    warnings.append("Detail geometry is static in all family types; changing Family Parameters does not rebuild it. No ADSK or connector edits.")
+    warnings.append("Coverage and bounds validate the supplied specification, not completeness or visual fidelity of the drawing. Compare exported views with the source.")
+    return {"success": True, "ready": not errors, "errors": errors, "warnings": warnings,
+            "schema_version": 1, "details": items, "detail_count": len(items), "replacement_elements": replacement,
+            "requirements": requirements, "context_token": before.get("context_token"),
+            "source_documents": documents, "parameter_count_before": before.get("parameter_count"),
+            "expected_bounds_mm": spec.get("expected_bounds_mm"), "tolerance_mm": spec.get("tolerance_mm"),
+            "geometry_node_count": budget[0], "visual_review_required": True, "parametric_details": False}

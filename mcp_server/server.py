@@ -78,21 +78,24 @@ def revit_test_geometry_in_active_family(dry_run: bool = True, context_token: st
     return bridge.active_family_call("test-geometry", {"dry_run": dry_run, "context_token": context_token})
 
 
-@mcp.tool(annotations=WRITE)
+@mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=True, idempotentHint=False, openWorldHint=False))
 def revit_add_family_details(spec: dict, dry_run: bool = True, context_token: str = "") -> dict:
-    """Add source-traceable details to a supported, previously generated assembly.
-    Profiles: Airhorse BPM-40A (default) and WOS-8 drawing 3400401
-    (spec.profile='wos8_drawing_3400401'). WOS finish uses operation='finish_wos8'.
-    These are bounded product-specific adapters, not an arbitrary geometry endpoint.
-    Default dry-run. Explicit straight-tank refinement retains original total tank length.
-    Preserves ADSK, connectors and unrelated geometry; backs up and saves a separate RFA.
+    """Build product-independent details using spec.schema_version=1 (see docs/universal_details.md).
+    Requires details, requirements coverage, expected_bounds_mm and tolerance_mm.
+    Geometry: extrusion (native with FreeForm fallback), revolve, loft, boolean CSG;
+    profiles: rectangle, rounded_rectangle, circle, ellipse, polygon, line/arc loops.
+    Static geometry, no automatic flex; never claim LOD350 or drawing fidelity from bounds alone.
+    Scaled/assumed dimensions require explicit acceptance and traceable evidence.
+    Optional replace_generated_ids replaces only selected tagged forms; no product adapters.
+    Default dry-run; write requires context_token. Preserves parameters and connectors.
+    Backs up, validates bounds, saves separate RFA and four comparison PNG views.
     """
     return bridge.active_family_call("detail", {"spec": spec, "dry_run": dry_run, "context_token": context_token})
 
 
 @mcp.tool(annotations=WRITE)
 def revit_finish_detail_presentation(dry_run: bool = True, context_token: str = "") -> dict:
-    """Set thin projection lines and scale 1:20 on the generated Airhorse detail view.
+    """Set thin projection lines and scale 1:20 on the active tagged MCP detail view.
     Backup, verify unchanged model/parameters, save separate RFA, export PNG.
     """
     return bridge.active_family_call("presentation", {"dry_run": dry_run, "context_token": context_token})

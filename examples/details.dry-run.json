@@ -1,0 +1,311 @@
+{
+  "dry_run": true,
+  "spec": {
+    "schema_version": 1,
+    "details": [
+      {
+        "logical_id": "equipment/base",
+        "geometry": {
+          "kind": "boolean",
+          "operation": "difference",
+          "left": {
+            "kind": "extrusion",
+            "frame": {
+              "origin_mm": [
+                0,
+                0,
+                0
+              ],
+              "u": [
+                1,
+                0,
+                0
+              ],
+              "v": [
+                0,
+                1,
+                0
+              ]
+            },
+            "loops": [
+              {
+                "kind": "rectangle",
+                "width_mm": 100,
+                "height_mm": 60
+              },
+              {
+                "kind": "circle",
+                "radius_mm": 5,
+                "offset_mm": [
+                  -35,
+                  0
+                ]
+              }
+            ],
+            "depth_mm": 10
+          },
+          "right": {
+            "kind": "extrusion",
+            "frame": {
+              "origin_mm": [
+                35,
+                0,
+                -1
+              ],
+              "u": [
+                1,
+                0,
+                0
+              ],
+              "v": [
+                0,
+                1,
+                0
+              ]
+            },
+            "loops": [
+              {
+                "kind": "circle",
+                "radius_mm": 5
+              }
+            ],
+            "depth_mm": 12
+          }
+        },
+        "accuracy": "dimensioned",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "Synthetic example: docs/universal_details.md",
+          "field": "Основание 100 × 60 × 10 мм с двумя отверстиями Ø10, межосевое расстояние 70 мм"
+        },
+        "expected_bounds_mm": {
+          "min_mm": [
+            -50,
+            -30,
+            0
+          ],
+          "max_mm": [
+            50,
+            30,
+            10
+          ]
+        }
+      },
+      {
+        "logical_id": "equipment/body",
+        "geometry": {
+          "kind": "extrusion",
+          "frame": {
+            "origin_mm": [
+              0,
+              0,
+              10
+            ],
+            "u": [
+              1,
+              0,
+              0
+            ],
+            "v": [
+              0,
+              1,
+              0
+            ]
+          },
+          "loops": [
+            {
+              "kind": "circle",
+              "radius_mm": 20
+            }
+          ],
+          "depth_mm": 60
+        },
+        "accuracy": "dimensioned",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "Synthetic example: docs/universal_details.md",
+          "field": "Корпус Ø40, высота 60 мм, низ на отметке 10 мм"
+        },
+        "expected_bounds_mm": {
+          "min_mm": [
+            -20,
+            -20,
+            10
+          ],
+          "max_mm": [
+            20,
+            20,
+            70
+          ]
+        }
+      },
+      {
+        "logical_id": "equipment/collar",
+        "geometry": {
+          "kind": "revolve",
+          "frame": {
+            "origin_mm": [
+              0,
+              0,
+              70
+            ],
+            "u": [
+              1,
+              0,
+              0
+            ],
+            "v": [
+              0,
+              0,
+              1
+            ]
+          },
+          "profile": {
+            "kind": "polygon",
+            "points_mm": [
+              [
+                0,
+                0
+              ],
+              [
+                20,
+                0
+              ],
+              [
+                22,
+                5
+              ],
+              [
+                20,
+                10
+              ],
+              [
+                0,
+                10
+              ]
+            ]
+          },
+          "angle_deg": 360
+        },
+        "accuracy": "dimensioned",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "Synthetic example: docs/universal_details.md",
+          "field": "Буртик вращения: радиусы 20 / 22 / 20 мм, высота 10 мм"
+        },
+        "expected_bounds_mm": {
+          "min_mm": [
+            -22,
+            -22,
+            70
+          ],
+          "max_mm": [
+            22,
+            22,
+            80
+          ]
+        }
+      },
+      {
+        "logical_id": "equipment/cap",
+        "geometry": {
+          "kind": "loft",
+          "frame": {
+            "origin_mm": [
+              0,
+              0,
+              80
+            ],
+            "u": [
+              1,
+              0,
+              0
+            ],
+            "v": [
+              0,
+              1,
+              0
+            ]
+          },
+          "sections": [
+            {
+              "offset_mm": 0,
+              "profile": {
+                "kind": "circle",
+                "radius_mm": 20
+              }
+            },
+            {
+              "offset_mm": 20,
+              "profile": {
+                "kind": "circle",
+                "radius_mm": 10
+              }
+            }
+          ]
+        },
+        "accuracy": "dimensioned",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "Synthetic example: docs/universal_details.md",
+          "field": "Переход Ø40 → Ø20, высота 20 мм"
+        },
+        "expected_bounds_mm": {
+          "min_mm": [
+            -20,
+            -20,
+            80
+          ],
+          "max_mm": [
+            20,
+            20,
+            100
+          ]
+        }
+      }
+    ],
+    "requirements": [
+      {
+        "id": "base",
+        "description": "Основание 100 × 60 × 10 мм с двумя отверстиями Ø10, межосевое расстояние 70 мм",
+        "detail_ids": [
+          "equipment/base"
+        ]
+      },
+      {
+        "id": "body",
+        "description": "Корпус Ø40, высота 60 мм, низ на отметке 10 мм",
+        "detail_ids": [
+          "equipment/body"
+        ]
+      },
+      {
+        "id": "collar",
+        "description": "Буртик вращения: радиусы 20 / 22 / 20 мм, высота 10 мм",
+        "detail_ids": [
+          "equipment/collar"
+        ]
+      },
+      {
+        "id": "cap",
+        "description": "Переход Ø40 → Ø20, высота 20 мм",
+        "detail_ids": [
+          "equipment/cap"
+        ]
+      }
+    ],
+    "expected_bounds_mm": {
+      "min_mm": [
+        -50,
+        -30,
+        0
+      ],
+      "max_mm": [
+        50,
+        30,
+        100
+      ]
+    },
+    "tolerance_mm": 0.1
+  }
+}
