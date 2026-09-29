@@ -1,0 +1,12 @@
+# Сторонние компоненты и исходные материалы
+
+Лицензия MIT в корне распространяется на исходный код и документацию этого проекта. Она не предоставляет прав на Autodesk Revit, Revit API, pyRevit, MCP-клиенты, их товарные знаки, сторонние библиотеки, корпоративные семейства или чертежи изготовителей.
+
+- Autodesk Revit и Revit API устанавливаются пользователем отдельно; DLL Autodesk здесь не распространяются. Условия: [Autodesk Terms](https://www.autodesk.com/company/terms-of-use/en/general-terms).
+- pyRevit устанавливается отдельно и сохраняет собственную лицензию: [pyRevit repository](https://github.com/pyrevitlabs/pyRevit).
+- MCP Python SDK и его зависимости устанавливаются через pip и сохраняют свои лицензии: [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk).
+- Дополнительные библиотеки PDF: [pypdf](https://github.com/py-pdf/pypdf), [pypdfium2](https://github.com/pypdfium2-team/pypdfium2), [Pillow](https://github.com/python-pillow/Pillow). Их лицензии не заменяются лицензией проекта.
+
+Чертежи REMEZA, Omega Air, Airhorse, коммерческие предложения и базовые RFA не входят в репозиторий. Названия изделий используются для обозначения специализированных адаптеров. Проект не является официальным продуктом указанных изготовителей.
+
+Файлы tests/fixtures содержат данные для регрессионных тестов, а не паспорта изделий. Их ссылки на source_stub.pdf являются тестовыми заглушками; такого PDF в поставке нет. Они не предназначены для записи характеристик реального оборудования.

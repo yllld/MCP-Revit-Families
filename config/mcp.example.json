@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "revit2021": {
+      "command": "C:\\BIM\\MCP-Revit-Families\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\BIM\\MCP-Revit-Families\\scripts\\run_server.py"]
+    }
+  }
+}

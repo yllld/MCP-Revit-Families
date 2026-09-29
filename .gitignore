@@ -1,0 +1,32 @@
+# Local environments, credentials and editor state
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.codex/
+.idea/
+.vscode/
+# Revit sessions, user source documents and generated deliverables
+.runtime/
+inputs/
+output/
+outputs/
+backup/
+reports/
+tmp/
+tests/output/
+*.rfa
+*.rft
+*.rvt
+*.rte
+*.pdf
+*.log
+*.addin
+*.dll
+*.exe
+*.zip
+Thumbs.db
+.DS_Store

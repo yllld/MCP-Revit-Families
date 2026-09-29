@@ -1,0 +1,9 @@
+{
+  "mappings": [],
+  "unmapped": [],
+  "policy_version": "2",
+  "confirmed_threshold": 0.95,
+  "review_threshold": 0.70,
+  "geometry_naming_priority": ["manufacturer_designation", "engineering_notation"],
+  "note": "ADSK/shared: existing only, direct model-matched source, confidence >= 0.95. Geometry: ordinary family parameters, manufacturer notation first."
+}

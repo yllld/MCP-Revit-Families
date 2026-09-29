@@ -1,0 +1,5 @@
+title: Health Check
+tooltip: Refresh Family MCP handlers and show Revit 2021 diagnostics. Does not change the model.
+context: zero-doc
+min_revit_version: 2021
+max_revit_version: 2021

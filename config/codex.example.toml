@@ -1,0 +1,11 @@
+# Merge this section into your config; do not replace the entire user config.
+# Replace both paths with the actual location of your clone.
+[mcp_servers.revit2021]
+command = 'C:\BIM\MCP-Revit-Families\.venv\Scripts\python.exe'
+args = ['C:\BIM\MCP-Revit-Families\scripts\run_server.py']
+startup_timeout_sec = 30
+tool_timeout_sec = 180
+
+# Uncomment only when multiple Revit 2021 processes are running.
+# [mcp_servers.revit2021.env]
+# REVIT_PROCESS_ID = '12345'

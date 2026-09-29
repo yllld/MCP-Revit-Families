@@ -1,0 +1,1561 @@
+{
+  "details": [
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/roof_grille_0",
+      "kind": "panel",
+      "center_mm": [
+        -455,
+        0,
+        1739
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Две решётки на плане и аксонометрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "width_mm": 310,
+      "height_mm": 600,
+      "depth_mm": 2,
+      "grid": [
+        6,
+        12
+      ],
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/roof_grille_1",
+      "kind": "panel",
+      "center_mm": [
+        -95,
+        0,
+        1739
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Две решётки на плане и аксонометрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "width_mm": 310,
+      "height_mm": 600,
+      "depth_mm": 2,
+      "grid": [
+        6,
+        12
+      ],
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/side_grille_0",
+      "kind": "panel",
+      "center_mm": [
+        149,
+        -205,
+        995
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Боковые вентиляционные панели на аксонометрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "X",
+      "width_mm": 270,
+      "height_mm": 490,
+      "depth_mm": 2,
+      "grid": [
+        4,
+        10
+      ],
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/side_grille_1",
+      "kind": "panel",
+      "center_mm": [
+        149,
+        170,
+        1400
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Боковые вентиляционные панели на аксонометрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "X",
+      "width_mm": 320,
+      "height_mm": 540,
+      "depth_mm": 2,
+      "grid": [
+        4,
+        10
+      ],
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_seam_0",
+      "kind": "box",
+      "center_mm": [
+        -902,
+        -391,
+        1220
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Вертикальные стыки передних панелей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        2,
+        2,
+        980
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_seam_1",
+      "kind": "box",
+      "center_mm": [
+        -500,
+        -391,
+        1220
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Вертикальные стыки передних панелей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        2,
+        2,
+        980
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_seam_2",
+      "kind": "box",
+      "center_mm": [
+        -405,
+        -391,
+        1220
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Вертикальные стыки передних панелей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        2,
+        2,
+        980
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_seam_3",
+      "kind": "box",
+      "center_mm": [
+        52,
+        -391,
+        1220
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Вертикальные стыки передних панелей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        2,
+        2,
+        980
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_seam_upper",
+      "kind": "box",
+      "center_mm": [
+        -425,
+        -391,
+        1710
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Верхний и нижний пояс передних панелей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        1148,
+        2,
+        2
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_seam_lower",
+      "kind": "box",
+      "center_mm": [
+        -425,
+        -391,
+        735
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Верхний и нижний пояс передних панелей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        1148,
+        2,
+        2
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/control_partition",
+      "kind": "box",
+      "center_mm": [
+        -175,
+        -391,
+        1310
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Горизонтальная граница панели пульта",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "size_mm": [
+        450,
+        2,
+        2
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/control_frame",
+      "kind": "panel",
+      "center_mm": [
+        -175,
+        -392,
+        1510
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Рамка пульта на фасаде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 410,
+      "height_mm": 285,
+      "depth_mm": 8,
+      "grid": [
+        1,
+        1
+      ],
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/control_back",
+      "kind": "panel",
+      "center_mm": [
+        -175,
+        -393,
+        1510
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Панель пульта на фасаде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "light",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 376,
+      "height_mm": 251,
+      "depth_mm": 3,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/control_display",
+      "kind": "panel",
+      "center_mm": [
+        -225,
+        -397,
+        1540
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Прямоугольное окно дисплея на фасаде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 205,
+      "height_mm": 105,
+      "depth_mm": 2,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/display_line_0",
+      "kind": "box",
+      "center_mm": [
+        -225,
+        -399.5,
+        1508
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённые линии внутри дисплея",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "light",
+      "fine_only": true,
+      "size_mm": [
+        175,
+        1,
+        2
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/display_line_1",
+      "kind": "box",
+      "center_mm": [
+        -225,
+        -399.5,
+        1521
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённые линии внутри дисплея",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "light",
+      "fine_only": true,
+      "size_mm": [
+        175,
+        1,
+        2
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/display_line_2",
+      "kind": "box",
+      "center_mm": [
+        -225,
+        -399.5,
+        1534
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённые линии внутри дисплея",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "light",
+      "fine_only": true,
+      "size_mm": [
+        175,
+        1,
+        2
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/control_button",
+      "kind": "cylinder",
+      "center_mm": [
+        -48,
+        -400,
+        1500
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Круглый орган управления справа от дисплея",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "-Y",
+      "radius_mm": 13,
+      "depth_mm": 5
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_lock_0",
+      "kind": "cylinder",
+      "center_mm": [
+        -700,
+        -391,
+        1660
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Замки передних дверей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "-Y",
+      "radius_mm": 7,
+      "depth_mm": 3
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/door_lock_1",
+      "kind": "cylinder",
+      "center_mm": [
+        -175,
+        -391,
+        1230
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Замки передних дверей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "-Y",
+      "radius_mm": 7,
+      "depth_mm": 3
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/base_slot_0",
+      "kind": "panel",
+      "center_mm": [
+        -780,
+        -391,
+        688
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Два прямоугольных проёма нижнего пояса",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 160,
+      "height_mm": 46,
+      "depth_mm": 2,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/base_slot_inner_0",
+      "kind": "panel",
+      "center_mm": [
+        -780,
+        -394,
+        688
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённое изображение проёма нижнего пояса",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 138,
+      "height_mm": 26,
+      "depth_mm": 1,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/base_slot_1",
+      "kind": "panel",
+      "center_mm": [
+        -135,
+        -391,
+        688
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Два прямоугольных проёма нижнего пояса",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 160,
+      "height_mm": 46,
+      "depth_mm": 2,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/base_slot_inner_1",
+      "kind": "panel",
+      "center_mm": [
+        -135,
+        -394,
+        688
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённое изображение проёма нижнего пояса",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 138,
+      "height_mm": 26,
+      "depth_mm": 1,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_label_frame",
+      "kind": "panel",
+      "center_mm": [
+        800,
+        -381,
+        1510
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Прямоугольная панель осушителя на фасаде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 205,
+      "height_mm": 88,
+      "depth_mm": 2,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_label",
+      "kind": "panel",
+      "center_mm": [
+        800,
+        -384,
+        1510
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Поле панели осушителя без неподтверждённых надписей",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "light",
+      "fine_only": true,
+      "axis": "-Y",
+      "width_mm": 180,
+      "height_mm": 62,
+      "depth_mm": 1,
+      "grid": null,
+      "border_mm": 12,
+      "web_mm": 6
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_side_seam",
+      "kind": "box",
+      "center_mm": [
+        1026,
+        0,
+        1120
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Стык обшивки осушителя на аксонометрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "size_mm": [
+        2,
+        2,
+        900
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_port_collar_0",
+      "kind": "cylinder",
+      "center_mm": [
+        800,
+        -250,
+        1615
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Два верхних штуцера осушителя, план и аксонометрия",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 26,
+      "depth_mm": 10
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_port_0",
+      "kind": "cylinder",
+      "center_mm": [
+        800,
+        -250,
+        1625
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Два верхних штуцера осушителя, без MEP-коннекторов",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 18,
+      "depth_mm": 34
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_port_collar_1",
+      "kind": "cylinder",
+      "center_mm": [
+        800,
+        250,
+        1615
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Два верхних штуцера осушителя, план и аксонометрия",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 26,
+      "depth_mm": 10
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/dryer_port_1",
+      "kind": "cylinder",
+      "center_mm": [
+        800,
+        250,
+        1625
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Два верхних штуцера осушителя, без MEP-коннекторов",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 18,
+      "depth_mm": 34
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_0_left_dome",
+      "kind": "dome",
+      "center_mm": [
+        -910,
+        -300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Выпуклые днища ресиверов на боковом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": false,
+      "axis": "-X",
+      "radius_mm": 230,
+      "depth_mm": 65
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_0_left_boss",
+      "kind": "cylinder",
+      "center_mm": [
+        -975,
+        -300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Центральные круглые бобышки на торцевом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-X",
+      "radius_mm": 43,
+      "depth_mm": 16
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_0_right_dome",
+      "kind": "dome",
+      "center_mm": [
+        910,
+        -300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Выпуклые днища ресиверов на боковом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": false,
+      "axis": "X",
+      "radius_mm": 230,
+      "depth_mm": 65
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_0_right_boss",
+      "kind": "cylinder",
+      "center_mm": [
+        975,
+        -300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Центральные круглые бобышки на торцевом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "X",
+      "radius_mm": 43,
+      "depth_mm": 16
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/drain_0",
+      "kind": "cylinder",
+      "center_mm": [
+        -825,
+        -300,
+        131
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Нижний сливной штуцер на боковом виде; повтор по симметрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-Z",
+      "radius_mm": 13,
+      "depth_mm": 30
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/drain_handle_0",
+      "kind": "box",
+      "center_mm": [
+        -825,
+        -300,
+        112
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённый рычаг сливного узла",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "size_mm": [
+        45,
+        10,
+        5
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_1_left_dome",
+      "kind": "dome",
+      "center_mm": [
+        -910,
+        300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Выпуклые днища ресиверов на боковом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": false,
+      "axis": "-X",
+      "radius_mm": 230,
+      "depth_mm": 65
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_1_left_boss",
+      "kind": "cylinder",
+      "center_mm": [
+        -975,
+        300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Центральные круглые бобышки на торцевом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-X",
+      "radius_mm": 43,
+      "depth_mm": 16
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_1_right_dome",
+      "kind": "dome",
+      "center_mm": [
+        910,
+        300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Выпуклые днища ресиверов на боковом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": false,
+      "axis": "X",
+      "radius_mm": 230,
+      "depth_mm": 65
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/tank_1_right_boss",
+      "kind": "cylinder",
+      "center_mm": [
+        975,
+        300,
+        360
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Центральные круглые бобышки на торцевом виде",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "X",
+      "radius_mm": 43,
+      "depth_mm": 16
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/drain_1",
+      "kind": "cylinder",
+      "center_mm": [
+        -825,
+        300,
+        131
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Нижний сливной штуцер на боковом виде; повтор по симметрии",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "axis": "-Z",
+      "radius_mm": 13,
+      "depth_mm": 30
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/drain_handle_1",
+      "kind": "box",
+      "center_mm": [
+        -825,
+        300,
+        112
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Упрощённый рычаг сливного узла",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "medium",
+      "fine_only": true,
+      "size_mm": [
+        45,
+        10,
+        5
+      ]
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_0_0",
+      "kind": "cylinder",
+      "center_mm": [
+        -820,
+        -475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_0_1",
+      "kind": "cylinder",
+      "center_mm": [
+        -790,
+        -475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_0_2",
+      "kind": "cylinder",
+      "center_mm": [
+        -145,
+        -475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_0_3",
+      "kind": "cylinder",
+      "center_mm": [
+        -115,
+        -475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_1_0",
+      "kind": "cylinder",
+      "center_mm": [
+        -820,
+        475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_1_1",
+      "kind": "cylinder",
+      "center_mm": [
+        -790,
+        475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_1_2",
+      "kind": "cylinder",
+      "center_mm": [
+        -145,
+        475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    },
+    {
+      "logical_id": "airhorse/BPM-40A/detail/v1/deck_fastener_1_3",
+      "kind": "cylinder",
+      "center_mm": [
+        -115,
+        475,
+        645
+      ],
+      "source": {
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "origin": "user_provided",
+        "source_type": "derived",
+        "field": "Группы крепёжных точек на площадке; рисунок упрощён",
+        "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+        "model_match": true,
+        "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "user_authorized_scaled_measurement": true
+      },
+      "approximate": true,
+      "material": "dark",
+      "fine_only": true,
+      "axis": "Z",
+      "radius_mm": 5,
+      "depth_mm": 1
+    }
+  ],
+  "receiver_refinement": {
+    "parameter": "l3",
+    "straight_length_mm": 1820,
+    "cap_depth_mm": 65,
+    "overall_length_mm": 1950,
+    "source": {
+      "file": "tests/fixtures/source_stub.pdf",
+      "page": 1,
+      "origin": "user_provided",
+      "source_type": "derived",
+      "field": "1950 общая длина; 1820 + 2*65 = 1950",
+      "calculation": "Scaled from orthographic and isometric views; rounded dimensions and simplified pattern",
+      "model_match": true,
+      "model_match_basis": "User directs BPM-30A drawing for BPM-40A",
+      "approximate": true,
+      "estimated_tolerance_mm": 20,
+      "user_authorized_scaled_measurement": true
+    }
+  },
+  "source_documents": [
+    {
+      "reference": "synthetic-drawing",
+      "is_test_fixture": true
+    },
+    {
+      "reference": "synthetic-data",
+      "is_test_fixture": true
+    }
+  ],
+  "limitations": [
+    "Static details have no parameter constraints, as explicitly requested by user",
+    "Neutral materials are illustrative, not confirmed manufacturer colours",
+    "Panel gaps, grille pitch, caps and small fittings are approximate scaled geometry",
+    "Fine details may project 1 mm above the nominal 1740 mm cabinet envelope"
+  ],
+  "is_test_fixture": true
+}

@@ -1,0 +1,14 @@
+{
+  "dry_run": true,
+  "spec": {
+    "equipment": {"model": "SYNTHETIC_POLICY_PREVIEW_ONLY", "is_example": true},
+    "allow_add_to_existing_geometry": true,
+    "family_parameters": [
+      {"name": "A", "type": "Length", "purpose": "Габарит A, проверка сохранения исходного обозначения", "used_for": ["geometry"], "value": 800, "unit": "mm", "source": {"source_type": "integration_test", "field": "Синтетический габарит A", "designation": "A", "reference": "parameter_policy_preview.json"}},
+      {"name": "B", "type": "Length", "purpose": "Габарит B", "used_for": ["geometry"], "value": 600, "unit": "mm", "source": {"source_type": "integration_test", "field": "Синтетический габарит B", "designation": "B", "reference": "parameter_policy_preview.json"}},
+      {"name": "H", "type": "Length", "purpose": "Габарит H", "used_for": ["geometry"], "value": 1200, "unit": "mm", "source": {"source_type": "integration_test", "field": "Синтетический габарит H", "designation": "H", "reference": "parameter_policy_preview.json"}}
+    ],
+    "geometry": [{"kind": "box", "logical_id": "policy-preview/body", "parameters": {"width": "B", "depth": "A", "height": "H"}}],
+    "values": {"ADSK_Наименование": {"value": "Не записывать: это синтетический пример", "confidence": 1.0, "source": {"source_type": "integration_test", "field": "Не подтверждено исходником реального оборудования"}}}
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "dry_run": true,
+  "spec": {
+    "equipment": {
+      "model": "TRAINING_BOX",
+      "is_example": true
+    },
+    "mode": "CURRENT_TYPE",
+    "allow_add_to_existing_geometry": false,
+    "family_parameters": [
+      {
+        "name": "L",
+        "type": "Length",
+        "purpose": "Учебный габарит L",
+        "used_for": [
+          "geometry"
+        ],
+        "value": 800.0,
+        "unit": "mm",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "examples/box.dry-run.json",
+          "field": "Синтетический размер L"
+        }
+      },
+      {
+        "name": "B",
+        "type": "Length",
+        "purpose": "Учебный габарит B",
+        "used_for": [
+          "geometry"
+        ],
+        "value": 600.0,
+        "unit": "mm",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "examples/box.dry-run.json",
+          "field": "Синтетический размер B"
+        }
+      },
+      {
+        "name": "H",
+        "type": "Length",
+        "purpose": "Учебный габарит H",
+        "used_for": [
+          "geometry"
+        ],
+        "value": 1200.0,
+        "unit": "mm",
+        "source": {
+          "source_type": "integration_test",
+          "reference": "examples/box.dry-run.json",
+          "field": "Синтетический размер H"
+        }
+      }
+    ],
+    "values": {},
+    "geometry": [
+      {
+        "kind": "box",
+        "logical_id": "example/training_box",
+        "parameters": {
+          "width": "L",
+          "depth": "B",
+          "height": "H"
+        }
+      }
+    ],
+    "overall_dimensions_mm": [
+      800,
+      600,
+      1200
+    ]
+  }
+}

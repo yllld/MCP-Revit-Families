@@ -1,0 +1,4 @@
+# Optional local source inspection; not imported by the MCP/Revit runtime.
+pypdf==6.19.0
+pypdfium2==5.13.0
+pillow==12.3.0

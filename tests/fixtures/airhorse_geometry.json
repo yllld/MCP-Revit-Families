@@ -1,0 +1,654 @@
+{
+  "equipment": {
+    "model": "BPM-40A",
+    "is_test_fixture": true,
+    "note": "Geometry regression fixture, not verified product data."
+  },
+  "mode": "CATALOG_TYPES",
+  "types": [
+    {
+      "family_type": "BPM-40A",
+      "values": {}
+    }
+  ],
+  "overall_dimensions_mm": [
+    2250,
+    1200,
+    1740
+  ],
+  "family_parameters": [
+    {
+      "name": "L",
+      "type": "Length",
+      "purpose": "Общая длина сборки / длина площадки",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "direct",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Габарит 2250",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry"
+      },
+      "unit": "mm",
+      "value": 2250
+    },
+    {
+      "name": "B",
+      "type": "Length",
+      "purpose": "Общая ширина / ширина поперечных опор",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "direct",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Габарит 1200",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry"
+      },
+      "unit": "mm",
+      "value": 1200
+    },
+    {
+      "name": "H",
+      "type": "Length",
+      "purpose": "Общая высота сборки",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "direct",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Габарит 1740",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry"
+      },
+      "unit": "mm",
+      "value": 1740
+    },
+    {
+      "name": "l1",
+      "type": "Length",
+      "purpose": "Длина корпуса компрессора",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "direct",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Корпус: 1150",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry"
+      },
+      "unit": "mm",
+      "value": 1150
+    },
+    {
+      "name": "b1",
+      "type": "Length",
+      "purpose": "Ширина корпуса компрессора",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "direct",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Корпус: 780",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry"
+      },
+      "unit": "mm",
+      "value": 780
+    },
+    {
+      "name": "h4",
+      "type": "Length",
+      "purpose": "Высота основания корпуса над полом",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Габарит 1740 и высота корпуса 1095",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "1740 - 1095 = 645 mm"
+      },
+      "unit": "mm",
+      "value": 645
+    },
+    {
+      "name": "h1",
+      "type": "Length",
+      "purpose": "Высота корпуса: 1095 при общей высоте 1740",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Верх корпуса = верх сборки; низ на h4=645",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "H - h4"
+      },
+      "unit": "mm",
+      "formula": "H - h4"
+    },
+    {
+      "name": "l2",
+      "type": "Length",
+      "purpose": "Длина осушителя",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Осушитель на фасаде",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 101 / 506 = 449.1 -> 450 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 450
+    },
+    {
+      "name": "b2",
+      "type": "Length",
+      "purpose": "Ширина осушителя",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Осушитель на плане",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 171 / 506 = 760.4 -> 760 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 760
+    },
+    {
+      "name": "h2",
+      "type": "Length",
+      "purpose": "Высота осушителя без мелких штуцеров",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Осушитель на фасаде",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 218 / 506 = 969.4 -> 970 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 970
+    },
+    {
+      "name": "l3",
+      "type": "Length",
+      "purpose": "Упрощённая длина горизонтальных ресиверов",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Ресивер на фасаде",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 439 / 506 = 1952.1 -> 1950 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 1950
+    },
+    {
+      "name": "d1",
+      "type": "Length",
+      "purpose": "Наружный диаметр обоих ресиверов",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Торцы ресиверов слева",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 104 / 506 = 462.5 -> 460 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 460
+    },
+    {
+      "name": "r1",
+      "type": "Length",
+      "purpose": "Радиус ресивера",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Геометрическое определение радиуса",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "d1 / 2"
+      },
+      "unit": "mm",
+      "formula": "d1 / 2"
+    },
+    {
+      "name": "x1",
+      "type": "Length",
+      "purpose": "Начало симметричного ресивера по X",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Центрирование длины",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "-l3 / 2"
+      },
+      "unit": "mm",
+      "formula": "-l3 / 2"
+    },
+    {
+      "name": "x2",
+      "type": "Length",
+      "purpose": "Конец симметричного ресивера по X",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Центрирование длины",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "l3 / 2"
+      },
+      "unit": "mm",
+      "formula": "l3 / 2"
+    },
+    {
+      "name": "b3",
+      "type": "Length",
+      "purpose": "Ширина площадки над ресиверами",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Площадка на торцевом виде",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 247 / 506 = 1098.3 -> 1100 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 1100
+    },
+    {
+      "name": "t1",
+      "type": "Length",
+      "purpose": "Упрощённая высота площадки",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Площадка на фасаде",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 22.5 / 506 = 100.0 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 100
+    },
+    {
+      "name": "l4",
+      "type": "Length",
+      "purpose": "Длина каждой поперечной опоры по X",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Опора на фасаде",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 56 / 506 = 249.0 -> 250 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 250
+    },
+    {
+      "name": "h3",
+      "type": "Length",
+      "purpose": "Высота опор",
+      "used_for": [
+        "geometry"
+      ],
+      "source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Опора от пола до верха",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "2250 * 42.5 / 506 = 189.0 -> 190 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      },
+      "unit": "mm",
+      "value": 190
+    }
+  ],
+  "geometry": [
+    {
+      "kind": "box",
+      "logical_id": "airhorse/BPM-40A/compressor",
+      "parameters": {
+        "width": "l1",
+        "depth": "b1",
+        "height": "h1"
+      },
+      "offset_mm": [
+        -425,
+        0,
+        645
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Положение корпуса",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "Z = 1740 - 1095 = 645; X = 2250*(791-887)/506 = -426.9 -> -425",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      }
+    },
+    {
+      "kind": "box",
+      "logical_id": "airhorse/BPM-40A/dryer",
+      "parameters": {
+        "width": "l2",
+        "depth": "b2",
+        "height": "h2"
+      },
+      "offset_mm": [
+        800,
+        0,
+        645
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Положение осушителя",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "Z = 645; X = 2250*(1067-887)/506 = 800.4 -> 800",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      }
+    },
+    {
+      "kind": "box",
+      "logical_id": "airhorse/BPM-40A/platform",
+      "parameters": {
+        "width": "L",
+        "depth": "b3",
+        "height": "t1"
+      },
+      "offset_mm": [
+        0,
+        0,
+        545
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Площадка под корпусом",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "Z = 1740 - 1095 - 100 = 545"
+      }
+    },
+    {
+      "kind": "box",
+      "logical_id": "airhorse/BPM-40A/support_left",
+      "parameters": {
+        "width": "l4",
+        "depth": "B",
+        "height": "h3"
+      },
+      "offset_mm": [
+        -500,
+        0,
+        0
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Оси опор 1000, симметричны сборке",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "X = -1000 / 2 = -500"
+      }
+    },
+    {
+      "kind": "box",
+      "logical_id": "airhorse/BPM-40A/support_right",
+      "parameters": {
+        "width": "l4",
+        "depth": "B",
+        "height": "h3"
+      },
+      "offset_mm": [
+        500,
+        0,
+        0
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Оси опор 1000, симметричны сборке",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "X = 1000 / 2 = 500"
+      }
+    },
+    {
+      "kind": "cylinder",
+      "axis": "X",
+      "logical_id": "airhorse/BPM-40A/receiver_left",
+      "parameters": {
+        "length": "l3",
+        "radius": "r1",
+        "start": "x1",
+        "end": "x2"
+      },
+      "offset_mm": [
+        0,
+        -300,
+        360
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Оси двух ресиверов",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "Y = +/-2250*67.5/506 ~= +/-300; Z = 2250*81/506 ~= 360 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      }
+    },
+    {
+      "kind": "cylinder",
+      "axis": "X",
+      "logical_id": "airhorse/BPM-40A/receiver_right",
+      "parameters": {
+        "length": "l3",
+        "radius": "r1",
+        "start": "x1",
+        "end": "x2"
+      },
+      "offset_mm": [
+        0,
+        300,
+        360
+      ],
+      "placement_source": {
+        "source_type": "derived",
+        "file": "tests/fixtures/source_stub.pdf",
+        "page": 1,
+        "field": "Оси двух ресиверов",
+        "origin": "user_provided",
+        "model_match": true,
+        "model_match_basis": "User explicitly instructed using BPM-30A drawing for BPM-40A geometry",
+        "calculation": "Y = +/-2250*67.5/506 ~= +/-300; Z = 2250*81/506 ~= 360 mm",
+        "approximate": true,
+        "estimated_tolerance_mm": 20,
+        "method": "Orthographic drawing scale calibrated to the 2250 mm dimension; rounded to 5/10 mm",
+        "user_authorized_scaled_measurement": true
+      }
+    }
+  ],
+  "source_documents": [
+    {
+      "reference": "synthetic-drawing",
+      "is_test_fixture": true
+    },
+    {
+      "reference": "synthetic-data",
+      "is_test_fixture": true
+    }
+  ],
+  "simplifications": [
+    "Receiver end caps simplified as flat cylinder ends; external outline approximation, not pressure-vessel design",
+    "Scaled secondary dimensions and offsets are approximate +/-20 mm; user explicitly authorized this",
+    "Offsets are fixed for this equipment layout; independent component size parameters are editable",
+    "Support and platform profiles simplified to solid boxes; no internal openings",
+    "600 L is catalog capacity, not the volume of the simplified external solid geometry"
+  ],
+  "geometry_omitted": [
+    "Internal compressor mechanism, screws, small valves, piping, mesh grilles and thin sheet-metal folds",
+    "Remeza WOS 8 is separate equipment and is not part of this compressor family",
+    "MEP connectors are not created or edited"
+  ],
+  "flex_checks": [
+    {
+      "values_mm": {
+        "H": 1840,
+        "d1": 480,
+        "l3": 2000
+      },
+      "purpose": "Temporary geometry flex; restore source dimensions before saving"
+    }
+  ]
+}
